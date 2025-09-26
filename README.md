@@ -1,101 +1,92 @@
-<<<<<<< HEAD
-# F1-Monitor-Cup
-Applicazione web per monitorare le classifiche del campionato di Formula 1 2025, con dati su piloti, scuderie, risultati gara e migliori giri.
+# 🏎️ F1 Monitor Cup
 
-1. **Titolo del progetto**
-    
-    **F1 Monitor Cup**
-    
-2. **Descrizione del progetto**
-    
-    Applicazione web per monitorare le classifiche del campionato di Formula 1 2025, con dati su piloti, scuderie, risultati gara e migliori giri.
-    
-    Struttura di navigazione:
-    
-    - Home → Prossimo Gp
-    - Pagina Classifiche.
-    - Pagina contenete i dati degli scorsi GP.
-    - Pagina Piloti/Scuderia.
-3. **Target**
-    
-    Rivolto ad appassionati di Formula 1, inizialmente a un gruppo ristretto di amici, con possibilità di ampliamento a una community più vasta, sia per chi vuole avere un colpo d’occhio veloce, sia per chi desidera confrontare statistiche in dettaglio.
-    
-4. **Mission**
-    
-    Offrire un colpo d’occhio semplice, veloce e visivo su classifiche e statistiche di gara, rendendo l’esperienza più immediata e intuitiva rispetto ai siti ufficiali, che spesso sono più complessi e dispersivi
-    
-5. **Funzionalità (Desiderata → Requirements)**
-    
-    a. Visualizzare classifiche piloti e scuderie aggiornate.
-    
-    b. Consultare i risultati dei GP con posizioni finali e migliori giri.
-    
-    c. Dashboard dedicate per piloti e scuderie con statistiche intuitive.
-    
-    d. Integrazione futura con API in tempo reale per aggiornamenti post-gara.
-    
-6. **Architettura Software**
-    
-    Webapp **React 18** con **Vite**, **SCSS** per la gestione degli stili.
-    
-    Database **MySQL/MariaDB** in container Docker con gestione tramite phpMyAdmin.
-    
-    Inizialmente i dati saranno mockup inseriti manualmente con un file JSON e in futuro saranno sostituiti da dati reali tramite API.
-    
-7. **Note**
-    
-    I requisiti dal punto d in poi saranno sviluppati in una **versione 2** del progetto, che includerà l’integrazione con API ufficiali e aggiornamenti automatici in tempo reale.
-=======
-<<<<<<< HEAD
-# React + Vite
+[![React](https://img.shields.io/badge/React-18.2.0-blue)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.x-purple)](https://vitejs.dev/)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Applicazione web per monitorare le classifiche e le statistiche del campionato di Formula 1 2025 in tempo reale.
 
-Currently, two official plugins are available:
+## 📋 Descrizione
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+F1 Monitor Cup è un'applicazione web frontend sviluppata con React e Vite che permette di visualizzare in modo semplice e intuitivo:
+- **Classifiche** piloti e scuderie aggiornate
+- **Risultati completi** dei GP con posizioni finali e migliori giri
+- **Dettagli piloti e scuderie** con statistiche della stagione 2025
+- **Informazioni sui prossimi eventi** e sessioni (libere, qualifiche, gara)
 
-## Expanding the ESLint configuration
+## 🎯 Target
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Rivolto principalmente ad appassionati di Formula 1, inizialmente sviluppato per un gruppo ristretto di amici con possibilità di espansione a una community più vasta. Ideale sia per chi cerca informazioni rapide che per chi desidera analisi dettagliate.
 
-## API UTILI
-**meeting_key=latest è il key dell weekend**
-**session_key=latest è il key dell evento (pratiche, qualifiche o gara)**
+## 🚀 Mission
 
-classfica ultima gara 
-https://api.openf1.org/v1/position?meeting_key=latest&session_key=latest
+Offrire un'esperienza utente semplice, veloce e visivamente efficace per l'accesso a classifiche e statistiche di gara, superando la complessità dei siti ufficiali tradizionali.
 
-dati di un weekend data, orari inizio e fine (pratiche, qualifiche e gara)
-https://api.openf1.org/v1/sessions?year=2025
+## ✨ Funzionalità
 
-risultati ultima gara
-https://api.openf1.org/v1/position?meeting_key=latest&session_key=latest
+### Versione 1.0 (Attuale)
+- ✅ **Classifiche** piloti e scuderie aggiornate.
+- ✅ **Risultati GP** con posizioni finali e migliori giri.
+- ✅ **Dashboard piloti** con statistiche stagione 2025.
+- ✅ **Integrazione parziale API** OpenF1 per dati in tempo reale.
+- ✅ **Design ** con Material UI.
 
-tutti i circuiti del 2025 (svolti)
-https://api.openf1.org/v1/meetings?year=2025
-=======
-# ProjectWork
+### Roadmap (Versione 2.0)
+- 🔄 **Integrazione completa API** ufficiali
+- 🔄 **Backend Django** per gestione dati avanzata
+- 🔄 **Aggiornamenti automatici** in tempo reale
+- 🔄 **Notifiche** sessioni e risultati
 
-In questa repository raccolgo alcuni progetti su cui ho lavorato durante il mio percorso di studio e pratica con **Java, HTML, CSS e Javascript**, altri linguaggi sia per il *Backend* che per il *Frontend *e lo sviluppo software.
+## 🏗️ Architettura Tecnica
 
-## 📌 Progetti attuali:
+### Frontend
+- **React 18** con Hooks e functional components
+- **Vite** come build tool e dev server
+- **SCSS** per styling modulare e variabili CSS
+- **React Router** per la navigazione
 
-- **Sistema_Biblioteca**  
-  Un progetto di **Backend** sviluppato in **Java** con Spring Boot.  
-  Contiene:
-  - codice sorgente del backend
-  - file di configurazione per Docker
-  - test automatici
-  - una **relazione PDF** che documenta il progetto
-  - un README dedicato nella cartella del progetto
+### Struttura Navigazione
+Home → Prossimo GP
+↓
+Piloti
+↓
+Scuderie
+↓
+Risultati GP 2025
 
-## 🎯 Obiettivo
-Questa repository ha lo scopo di raccogliere e condividere i miei lavori, mostrando le competenze acquisite nello sviluppo di applicazioni da Full stack developers.
 
----
+### Dati
+- **API OpenF1** per dati in tempo reale
+- **JSON locale** per dati mockup e integrazioni
+- **Future integrazioni** con API ufficiali F1
 
-📂 Per maggiori dettagli sul funzionamento e sull’architettura del progetto, consulta direttamente la cartella [`Sistema_Biblioteca`](./Sistema_Biblioteca).
+## 🛠️ Installazione e Utilizzo
 
-(F1 Monitor Cup project 1.0)
+### Prerequisiti
+- Node.js 16+ e npm
+
+### Setup
+```bash
+# Clona il repository
+git clone https://github.com/tuo-username/f1-monitor-cup.git
+
+# Entra nella cartella del progetto
+cd f1-monitor-cup
+
+# Installa le dipendenze
+npm install
+
+# Avvia il server di sviluppo
+npm run dev
+```
+
+### 🎨 Design e UX
+Interfaccia ottimizzata per:
+
+- Visualizzazione rapida delle informazioni principali
+- Navigazione intuitiva tra le diverse sezioni
+- Design moderno ispirato al mondo della Formula 1
+- Experience mobile-first e responsive
+
+#### *Autore*
+Giorgia Di Noto - giorgiadinoto03@gmail.com
