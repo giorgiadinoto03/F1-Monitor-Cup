@@ -88,5 +88,6 @@ Interfaccia ottimizzata per:
 - Design moderno ispirato al mondo della Formula 1
 - Experience mobile-first e responsive
 
+
 #### *Autore*
 Giorgia Di Noto - giorgiadinoto03@gmail.com
