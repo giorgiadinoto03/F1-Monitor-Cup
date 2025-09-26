@@ -97,5 +97,5 @@ Questa repository ha lo scopo di raccogliere e condividere i miei lavori, mostra
 ---
 
 📂 Per maggiori dettagli sul funzionamento e sull’architettura del progetto, consulta direttamente la cartella [`Sistema_Biblioteca`](./Sistema_Biblioteca).
->>>>>>> b834dc7dc592c2762861427181d886b365a39667
->>>>>>> 9dffe0f (F1 Monitor Cup project 1.0)
+
+(F1 Monitor Cup project 1.0)

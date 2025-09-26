@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+.App {
+  text-align: center;
+  font-family: 'Titillium Web';
+}
+
+.Header {
+  text-align: center;
+  font-family: 'Titillium Web';
+  background-image: url(https://img.freepik.com/vettori-gratuito/sfondo-di-velocita-bandiera-a-scacchi-da-corsa_1017-23607.jpg);
+  background-size: cover;
+  object-position: top;
+  padding: 10px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.ButtonNav:hover {
+  background-color: #b81313;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.Filtro {
+  background-color: rgba(42, 78, 33, 0.5);
+  color: white;
+  margin-left: 0;
+}
+.Filtro:hover {
+  background-color: #2a713d;
+  transition: background-color 0.25s ease-in-out;
+}
+
+  h1, h2, p, h3 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+table {
+  table-layout: fixed;
+  width: 75%;                /* larghezza comoda e centrata */
+  border-collapse: collapse;
+  margin: 18px auto 32px;
+  border: 2px solid #b81313;
+}
+
+thead th {
+  font-family: 'Titillium Web';
+  font-weight: bold;
+  background-color: #b81313;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* applichiamo lo striping solo alle righe del body */
+tbody tr:nth-child(even) {
+  background-color: #282828;
+}
+
+/* vertical align per tutte le celle così testo e immagini stanno allo stesso livello */
+tbody tr td {
+  font-family: 'Titillium Web';
+  font-weight: 500;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  border-bottom: 0.5px solid #b81313;
+  vertical-align: middle; /* MOLTO importante per centrare verticalmente */
+}
+/* immagini pilota & sfondo*/
+.PilotiImg {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+  border: 1px solid white;
+  image-rendering: auto;
+}
+.PilotiBackground {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.25);}
+
+
+/* logo scuderia */
+.LogoBackground {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Immagini scuderia*/
+.TeamLogo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.6);
+  display: block;
+  box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.25);
+}
+
+/* lista piloti — verticale, centrata */
+.PilotiList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;   /* piloti uno sotto l'altro */
+  align-items: center;      /* centrati orizzontalmente nella cella */
+  gap: 10px;
+}
+
+/* singolo pilota: immagine + nome, centrati verticalmente */
+.Pilota {
+  display: flex;
+  align-items: center;     /* CENTRA verticalmente immagine e testo */
+  gap: 12px;
+  justify-content: flex-start; /* puoi cambiare in center se vuoi testo subito sotto immagine */
+  width: 100%;
+}
+
+/* immagine pilota (più grande per leggibilità) */
+.PilotiImgTeam {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: #b8b8b8d1;
+  flex-shrink: 0;
+  box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.25);
+}
+
+.PilotiName {
+  font-family: monospace, 'Titillium Web';
+  font-weight: 500;
+  color: white;
+  flex-grow: 1;
+}
+
+.PilotiImgCard{
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid white;
+}
+.PilotiBackgroundCard {
+  width: 120px; /* Dimensione specifica per la card */
+  height: 180px;
+  margin: 0 auto 10px auto; /* Centra il contenitore */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.75); 
+}
+
+tbody tr:hover { background-color: rgba(51, 114, 192, 0.33); }
+
+.Footer {
+  font-family: 'Titillium Web';
+  width: 100%;
+  background-color: #303050;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    
+}
+.gp-table {
+    table-layout: fixed;
+    width: 75%;                /* larghezza comoda e centrata */
+    border-collapse: collapse;
+    margin-top: 18px;
+}
+
+.gp-table th, .gp-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.gp-table thead {
+    background-color: #f4f4f4;
+    border-bottom: 2px solid #ddd;
+}
+
+.gp-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.gp-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.gp-table tbody tr:hover {
+    background-color: rgba(51, 114, 192, 0.33);
+}
+.session-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+.SessionBott{
+  background-color: #303050;
+}
+
+.session-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.session-button:hover {
+    background-color: #0056b3;
+}
+
+.side-image {
+    width: 10%; /* Larghezza delle immagini laterali */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-image img {
+    max-width: 100%; /* L'immagine si adatta alla larghezza del contenitore */
+    height: auto; /* Mantiene le proporzioni */
+}
+.homepage-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh; /* Altezza della pagina */
+    padding: 0 20px;
+}
+
+.main-content {
+    width: 80%; /* Larghezza del contenuto centrale */
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.main-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    font-size: 1.2em;
+    color: #555;
+}
