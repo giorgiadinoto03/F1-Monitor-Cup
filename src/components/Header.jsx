@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -24,22 +24,24 @@ return (
     <Container maxWidth="0" className='Header'> {/* Container per centrare il contenuto */}
         <Toolbar disableGutters>
             {/* Voglio mettere i bottoni al centro */}
-        <Box sx={{ display: "flex", alignItems: "center"}}> 
-            <img src={f1Logo} alt="F1 Logo" style={{ width: 60, height: 60, marginRight: 10, backgroundColor: "rgba(255, 255, 255, 1)" }} /> {/* Logo F1 */}
-            <Typography
-            variant="h5"
-            
-            sx={{
-                fontFamily: "Titillium Web",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textShadow: "2px 2px 4px rgba(255, 251, 173, 0.63)", // Aggiunge un'ombra al testo per migliorare la leggibilità
-                }}
-            >
-            F1 Monitor Cup
-            </Typography>
-        </Box>
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ display: "flex", alignItems: "center"}}> 
+                <img src={f1Logo} alt="F1 Logo" style={{ width: 60, height: 60, marginRight: 10, backgroundColor: "rgba(255, 255, 255, 1)" }} /> {/* Logo F1 */}
+                <Typography
+                variant="h5"
+                
+                sx={{
+                    fontFamily: "Titillium Web",
+                    fontWeight: 700,
+                    letterSpacing: ".3rem",
+                    color: "inherit",
+                    textShadow: "2px 2px 4px rgba(255, 251, 173, 0.63)", // Aggiunge un'ombra al testo per migliorare la leggibilità
+                    }}
+                >
+                F1 Monitor Cup
+                </Typography>
+            </Box>
+        </Link>
 
         {/* Pulsanti di navigazione */}
         <Box sx={{ flexGrow: 0.80, display: "flex", justifyContent: "center" }}>

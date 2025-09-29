@@ -235,26 +235,32 @@ tbody tr:hover { background-color: rgba(51, 114, 192, 0.33); }
 }
 
 .side-image {
-    width: 10%; /* Larghezza delle immagini laterali */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 15%; 
+    height: 100%; 
+    padding: 10px; 
+    box-sizing: border-box; 
 }
 
 .side-image img {
-    max-width: 100%; /* L'immagine si adatta alla larghezza del contenitore */
-    height: auto; /* Mantiene le proporzioni */
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    border: 5px solid rgb(0, 0, 0); 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    border-radius: 8px; /* Bordi arrotondati */
 }
+
 .homepage-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: 100vh; /* Altezza della pagina */
-    padding: 0 20px;
+    align-items: stretch; /* Allunga gli elementi figli per tutta l'altezza */
+    height: 100vh; 
+    padding: 0; 
+    gap: 20px; /* Spazio tra le colonne */
 }
 
 .main-content {
-    width: 80%; /* Larghezza del contenuto centrale */
+    flex-grow: 1; /* Il contenuto centrale occupa lo spazio rimanente */
     text-align: center;
     padding: 20px;
     
