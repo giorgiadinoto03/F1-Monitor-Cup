@@ -2,6 +2,8 @@ import React, { useEffect , useState} from 'react';
 import {BrowserRouter, Route, Routes, Link} from 'react-router-dom';
 import DriversData from '../data/piloti.json';
 import PilotiCard from '../components/PilotiCard';
+import "../App.css";
+import SideImage from '../components/SideImage';
 
 // Fetching data from the API
 export function Piloti() {
@@ -49,7 +51,6 @@ export function Piloti() {
                     ...apiDriver,
                     
                 }
-
             })
 
             setDrivers(mergeDrivers);
@@ -66,6 +67,7 @@ export function Piloti() {
     return (
         <>
         <div className="Piloti">
+
             <h1>Benvenuto nella sezione Piloti</h1>
             <h2>Informazioni sui piloti di Formula 1</h2>
             <p>Qui potrai trovare tutte le informazioni sulla stagione di Formula 1 2025 </p>
@@ -89,7 +91,7 @@ export function Piloti() {
                     </tr>
                 </thead>
                 <tbody>
-                    {drivers.map((driver, index) => (
+                    {drivers.map((driver, index) => ( //drivers.map -> serve a mappare i dati dall'API al componente
                         <tr key={index}>
                             <td>{driver.driver_number}</td> 
 
@@ -119,6 +121,7 @@ export function Piloti() {
             </table>
 
         </div>
+        
         </>
     );
 }

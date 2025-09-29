@@ -259,6 +259,15 @@ tbody tr:hover { background-color: rgba(51, 114, 192, 0.33); }
     gap: 20px; /* Spazio tra le colonne */
 }
 
+.SideImage-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Allunga gli elementi figli per tutta l'altezza */
+    height: 100vh; 
+    padding: 0; 
+    gap: 20px; /* Spazio tra le colonne */
+}
+
 .main-content {
     flex-grow: 1; /* Il contenuto centrale occupa lo spazio rimanente */
     text-align: center;

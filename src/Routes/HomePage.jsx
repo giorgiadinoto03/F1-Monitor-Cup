@@ -4,7 +4,7 @@ import Header from "../components/Header";
 
 export default function HomePage() {
     return (
-        <div className="homepage-container">
+        <div className="SideImage-container">
             {/* Immagine a sinistra */}
             <SideImage
                 src="https://static.vecteezy.com/ti/vettori-gratis/p1/16168385-da-corsa-e-rally-auto-scacchi-vettore-bandiera-vettoriale.jpg"
