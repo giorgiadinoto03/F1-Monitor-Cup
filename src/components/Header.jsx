@@ -8,7 +8,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 
 // Logo F1 personalizzato nell header
-const f1Logo = "https://brandlogos.net/wp-content/uploads/2022/04/formula_1-logo-brandlogos.net_.png";
+const f1Logo = "/F1-monitor-cup-logo1.png";
 
 // Pulsanti di navigazione
 const pages = [
@@ -26,10 +26,10 @@ return (
             {/* Voglio mettere i bottoni al centro */}
         <Link to="/" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
             <Box sx={{ display: "flex", alignItems: "center"}}> 
-                <img src={f1Logo} alt="F1 Logo" style={{ width: 60, height: 60, marginRight: 10, backgroundColor: "rgba(255, 255, 255, 1)" }} /> {/* Logo F1 */}
+
+                <img src={f1Logo} alt="F1 Logo" style={{ width: 80, height: 70, marginRight: 10 }} /> {/* Logo F1 */}
                 <Typography
                 variant="h5"
-                
                 sx={{
                     fontFamily: "Titillium Web",
                     fontWeight: 700,

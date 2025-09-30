@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+
+/* ========== STILI BASE ========== */
 .App {
   text-align: center;
   font-family: 'Titillium Web';
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .Header {
@@ -15,7 +20,6 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-
 .ButtonNav:hover {
   background-color: #b81313;
   transition: background-color 0.25s ease-in-out;
@@ -26,23 +30,27 @@
   color: white;
   margin-left: 0;
 }
+
 .Filtro:hover {
   background-color: #2a713d;
   transition: background-color 0.25s ease-in-out;
 }
 
-  h1, h2, p, h3 {
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    text-align: center;
-  }
+h1, h2, p, h3, h4 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
 
+/* ========== TABELLE ========== */
 table {
   table-layout: fixed;
-  width: 75%;                /* larghezza comoda e centrata */
+  width: 95%;
+  max-width: 1200px;
   border-collapse: collapse;
   margin: 18px auto 32px;
   border: 2px solid #b81313;
+  overflow-x: auto;
 }
 
 thead th {
@@ -54,12 +62,10 @@ thead th {
   text-align: center;
 }
 
-/* applichiamo lo striping solo alle righe del body */
 tbody tr:nth-child(even) {
   background-color: #282828;
 }
 
-/* vertical align per tutte le celle così testo e immagini stanno allo stesso livello */
 tbody tr td {
   font-family: 'Titillium Web';
   font-weight: 500;
@@ -67,9 +73,14 @@ tbody tr td {
   padding: 12px;
   text-align: center;
   border-bottom: 0.5px solid #b81313;
-  vertical-align: middle; /* MOLTO importante per centrare verticalmente */
+  vertical-align: middle;
 }
-/* immagini pilota & sfondo*/
+
+tbody tr:hover {
+  background-color: rgba(51, 114, 192, 0.33);
+}
+
+/* ========== IMMAGINI PILOTI ========== */
 .PilotiImg {
   width: 130px;
   height: 130px;
@@ -79,6 +90,7 @@ tbody tr td {
   border: 1px solid white;
   image-rendering: auto;
 }
+
 .PilotiBackground {
   width: 130px;
   height: 130px;
@@ -88,10 +100,28 @@ tbody tr td {
   display: flex;
   align-items: center;
   justify-content: center;
-    box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.25);}
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+}
 
+.PilotiImgCard {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid white;
+}
 
-/* logo scuderia */
+.PilotiBackgroundCard {
+  width: 120px;
+  height: 180px;
+  margin: 0 auto 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.75);
+}
+
+/* ========== LOGO SCUDERIE ========== */
 .LogoBackground {
   width: 40px;
   height: 40px;
@@ -102,38 +132,35 @@ tbody tr td {
   justify-content: center;
 }
 
-/*Immagini scuderia*/
 .TeamLogo {
   width: 40px;
   height: 40px;
   object-fit: contain;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.6);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   display: block;
-  box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.25);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* lista piloti — verticale, centrata */
+/* ========== LISTA PILOTI ========== */
 .PilotiList {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column;   /* piloti uno sotto l'altro */
-  align-items: center;      /* centrati orizzontalmente nella cella */
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 
-/* singolo pilota: immagine + nome, centrati verticalmente */
 .Pilota {
   display: flex;
-  align-items: center;     /* CENTRA verticalmente immagine e testo */
+  align-items: center;
   gap: 12px;
-  justify-content: flex-start; /* puoi cambiare in center se vuoi testo subito sotto immagine */
+  justify-content: flex-start;
   width: 100%;
 }
 
-/* immagine pilota (più grande per leggibilità) */
 .PilotiImgTeam {
   width: 70px;
   height: 70px;
@@ -143,7 +170,7 @@ tbody tr td {
   border: 1px solid white;
   background-color: #b8b8b8d1;
   flex-shrink: 0;
-  box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.25);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
 }
 
 .PilotiName {
@@ -153,134 +180,343 @@ tbody tr td {
   flex-grow: 1;
 }
 
-.PilotiImgCard{
-  width: 120px;
-  height: 180px;
-  object-fit: cover;
-  object-position: top;
-  border: 1px solid white;
-}
-.PilotiBackgroundCard {
-  width: 120px; /* Dimensione specifica per la card */
-  height: 180px;
-  margin: 0 auto 10px auto; /* Centra il contenitore */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.75); 
-}
-
-tbody tr:hover { background-color: rgba(51, 114, 192, 0.33); }
-
-.Footer {
-  font-family: 'Titillium Web';
-  width: 100%;
-  background-color: #303050;
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    
-}
+/* ========== GP TABLE ========== */
 .gp-table {
-    table-layout: fixed;
-    width: 75%;                /* larghezza comoda e centrata */
-    border-collapse: collapse;
-    margin-top: 18px;
+  table-layout: fixed;
+  width: 95%;
+  max-width: 1200px;
+  border-collapse: collapse;
+  margin: 18px auto;
 }
 
-.gp-table th, .gp-table td {
-    padding: 10px;
-    text-align: left;
+.gp-table th,
+.gp-table td {
+  padding: 10px;
+  text-align: left;
 }
 
 .gp-table thead {
-    background-color: #f4f4f4;
-    border-bottom: 2px solid #ddd;
+  background-color: #f4f4f4;
+  border-bottom: 2px solid #ddd;
 }
 
 .gp-table tbody tr {
-    border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 .gp-table tbody tr:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .gp-table tbody tr:hover {
-    background-color: rgba(51, 114, 192, 0.33);
+  background-color: rgba(51, 114, 192, 0.33);
 }
+
+/* ========== SESSIONI ========== */
 .session-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
 }
-.SessionBott{
+
+.SessionBott {
   background-color: #303050;
 }
 
 .session-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 0.9em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9em;
 }
 
 .session-button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
+}
+
+/* ========== HOMEPAGE LAYOUT ========== */
+.SideImage-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  min-height: calc(100vh - 200px);
+  padding: 0;
+  box-sizing: border-box;
+  gap: 20px;
 }
 
 .side-image {
-    width: 15%; 
-    height: 100%; 
-    padding: 10px; 
-    box-sizing: border-box; 
+  width: 230px;
+  min-height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .side-image img {
-    width: 100%;
-    height: 100%; 
-    object-fit: cover; 
-    border: 5px solid rgb(0, 0, 0); 
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-    border-radius: 8px; /* Bordi arrotondati */
-}
-
-.homepage-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch; /* Allunga gli elementi figli per tutta l'altezza */
-    height: 100vh; 
-    padding: 0; 
-    gap: 20px; /* Spazio tra le colonne */
-}
-
-.SideImage-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch; /* Allunga gli elementi figli per tutta l'altezza */
-    height: 100vh; 
-    padding: 0; 
-    gap: 20px; /* Spazio tra le colonne */
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  object-fit: cover;
+  border: 5px solid rgb(0, 0, 0);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
 }
 
 .main-content {
-    flex-grow: 1; /* Il contenuto centrale occupa lo spazio rimanente */
-    text-align: center;
-    padding: 20px;
-    
+  flex-grow: 1;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
 }
 
 .main-content h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+  font-size: 2.5em;
+  margin-bottom: 10px;
 }
 
-.main-content p {
-    font-size: 1.2em;
-    color: #555;
+.main-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========== FOOTER ========== */
+.Footer {
+  font-family: 'Titillium Web';
+  width: 100%;
+  background-color: #303050;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: auto;
+}
+
+/* ========== MEDIA QUERIES - RESPONSIVE ========== */
+
+/* Tablet (fino a 1024px) */
+@media (max-width: 1024px) {
+  .side-image {
+    width: 150px;
+  }
+
+  .side-image img {
+    min-height: 70vh;
+  }
+
+  table,
+  .gp-table {
+    width: 98%;
+  }
+
+  .main-content h1 {
+    font-size: 2em;
+  }
+
+  .PilotiImg,
+  .PilotiBackground {
+    width: 100px;
+    height: 100px;
+  }
+
+  .PilotiImgCard,
+  .PilotiBackgroundCard {
+    width: 100px;
+    height: 150px;
+  }
+}
+
+/* Tablet piccoli e smartphone orizzontale (fino a 768px) */
+@media (max-width: 768px) {
+  .SideImage-container {
+    flex-direction: column;
+    min-height: auto;
+    gap: 10px;
+  }
+
+  .side-image {
+    width: 100%;
+    min-height: 150px;
+    padding: 5px;
+  }
+
+  .side-image img {
+    min-height: 150px;
+    max-height: 200px;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+
+  .main-content h1 {
+    font-size: 1.8em;
+  }
+
+  .main-content h2 {
+    font-size: 1.3em;
+  }
+
+  .main-content p {
+    font-size: 0.95em;
+  }
+
+  table,
+  .gp-table {
+    width: 100%;
+    font-size: 0.9em;
+  }
+
+  tbody tr td {
+    padding: 8px;
+  }
+
+  .PilotiImg,
+  .PilotiBackground {
+    width: 80px;
+    height: 80px;
+  }
+
+  .PilotiImgCard,
+  .PilotiBackgroundCard {
+    width: 80px;
+    height: 120px;
+  }
+
+  .PilotiImgTeam {
+    width: 50px;
+    height: 50px;
+  }
+
+  .TeamLogo,
+  .LogoBackground {
+    width: 35px;
+    height: 35px;
+  }
+
+  .Pilota {
+    gap: 8px;
+  }
+
+  .PilotiName {
+    font-size: 0.9em;
+  }
+
+  /* Header responsive */
+  .Header {
+    padding: 5px;
+  }
+
+  .Footer {
+    padding: 15px 10px;
+    font-size: 0.9em;
+  }
+}
+
+/* Smartphone (fino a 480px) */
+@media (max-width: 480px) {
+  .main-content h1 {
+    font-size: 1.5em;
+  }
+
+  .main-content h2 {
+    font-size: 1.1em;
+  }
+
+  .main-content h3 {
+    font-size: 1em;
+  }
+
+  .main-content p {
+    font-size: 0.85em;
+  }
+
+  table,
+  .gp-table {
+    font-size: 0.8em;
+  }
+
+  tbody tr td {
+    padding: 6px;
+  }
+
+  thead th {
+    padding: 8px 4px;
+    font-size: 0.85em;
+  }
+
+  .PilotiImg,
+  .PilotiBackground {
+    width: 60px;
+    height: 60px;
+  }
+
+  .PilotiImgCard,
+  .PilotiBackgroundCard {
+    width: 70px;
+    height: 105px;
+  }
+
+  .PilotiImgTeam {
+    width: 40px;
+    height: 40px;
+  }
+
+  .TeamLogo,
+  .LogoBackground {
+    width: 30px;
+    height: 30px;
+  }
+
+  .session-button {
+    font-size: 0.8em;
+    padding: 4px 8px;
+  }
+
+  .side-image img {
+    min-height: 120px;
+    max-height: 150px;
+  }
+
+  .Footer {
+    font-size: 0.8em;
+    padding: 10px 5px;
+  }
+}
+
+/* Smartphone molto piccoli (fino a 360px) */
+@media (max-width: 360px) {
+  .main-content h1 {
+    font-size: 1.3em;
+  }
+
+  .main-content h2 {
+    font-size: 1em;
+  }
+
+  tbody tr td {
+    padding: 4px;
+    font-size: 0.75em;
+  }
+
+  .PilotiImg,
+  .PilotiBackground {
+    width: 50px;
+    height: 50px;
+  }
+
+  .PilotiImgTeam {
+    width: 35px;
+    height: 35px;
+  }
 }

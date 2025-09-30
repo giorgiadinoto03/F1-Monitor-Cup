@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from "react";
 import SessionCard from "../components/SessionCard";
+import "../App.css";
+import GpData from "../data/gp2025.json";
+
 
 export function Gp2025() {
     const [GranPremio, setGranPremio] = useState([]); // Stato per i meeting
     const [Sessioni, setSessioni] = useState({}); // Stato per le sessioni (oggetto con chiavi meeting_key)
+
+    const fixImagePath = (path) => {
+    if (!path) return null;
+    return path.replace('../public', '');
+};
+
 
     useEffect(() => {
         const fetchGranPremio = async () => {
@@ -50,6 +59,9 @@ export function Gp2025() {
         fetchGranPremio();
     }, []);
 
+    //passare anche dei dati personalizzati da gp2025.json:
+    const [Gpimage, setGpimage] = useState(GpData);
+
     return (
         <>
             <div className="Gp2025">
@@ -62,6 +74,7 @@ export function Gp2025() {
                 <table className="gp-table">
                     <thead>
                         <tr>
+                            <th>Circuito</th>
                             <th>Paese</th>
                             <th>Nome Ufficiale</th>
                             <th>Location</th>
@@ -71,84 +84,100 @@ export function Gp2025() {
                         </tr>
                     </thead>
                     <tbody>
-                        {GranPremio.map((gp, index) => (
-                            <tr key={index}>
-                                {/* Colonna Paese */}
-                                <td>
-                                    <strong style={{ fontSize: "1.2em" }}>{gp.country_name}</strong>
-                                </td>
+                    {GranPremio.map((gp, index) => {
+                        // Cerca nel JSON locale l'entry con stesso meeting_key
+                        const gpLocal = Gpimage.find((item) => item.meeting_key === gp.meeting_key);
 
-                                {/* Colonna Nome Ufficiale */}
-                                <td>
-                                    <div>
-                                        <span style={{ fontWeight: "bold" }}>{gp.meeting_name}</span>
-                                        <br />
-                                        <span style={{ fontStyle: "italic" }}>{gp.meeting_official_name}</span>
-                                    </div>
-                                </td>
+                        return (
+                        <tr key={index}>
+                            {/* Colonna Immagine circuito */}
+                            <td>
+                            {gpLocal && gpLocal["circuit_image"] ? (
+                                <img
+                                src={fixImagePath(gpLocal["circuit_image"])}
+                                alt={`Circuito di ${gp.location}`}
+                                style={{ width: "120px", height: "auto", borderRadius: "8px" }}
+                                />
+                            ) : (
+                                <span style={{ fontStyle: "italic", color: "gray" }}>No image</span>
+                            )}
+                            </td>
 
-                                {/* Colonna Location */}
-                                <td>{gp.location}</td>
+                            {/* Colonna Paese */}
+                            <td>
+                            <strong style={{ fontSize: "1.2em" }}>{gp.country_name}</strong>
+                            </td>
 
-                                {/* Colonna Prove Libere */}
-                                <td>
-                                    {Sessioni[gp.meeting_key]?.practice.length > 0 ? (
-                                        Sessioni[gp.meeting_key].practice.map((session, i) => (
-                                            <div key={i} className="session-item">
-                                                <SessionCard
-                                                sessionKey={session.session_key}
-                                                label={`FP${i + 1}`}
-                                                meetingName={gp.meeting_name}
-                                                dateStart={session.date_start}
-                                                /> 
-                                            </div>
-                                            
-                                        ))
-                                    ) : (
-                                        "N/A"
-                                    )}
-                                    
-                                </td>
+                            {/* Colonna Nome Ufficiale */}
+                            <td>
+                            <div>
+                                <span style={{ fontWeight: "bold" }}>{gp.meeting_name}</span>
+                                <br />
+                                <span style={{ fontStyle: "italic" }}>{gp.meeting_official_name}</span>
+                            </div>
+                            </td>
 
-                                {/* Colonna Qualifiche */}
-                                <td>
-                                    {Sessioni[gp.meeting_key]?.qualifying.length > 0 ? (
-                                        Sessioni[gp.meeting_key].qualifying.map((session, i) => (
-                                            <div key={i} className="session-item">
-                                                <SessionCard
-                                                sessionKey={session.session_key}
-                                                label="Qualifying"
-                                                meetingName={gp.meeting_name}
-                                                dateStart={session.date_start}
-                                                />
-                                            </div>
-                                        ))
-                                    ) : (
-                                        "N/A"
-                                    )}
-                                </td>
+                            {/* Colonna Location */}
+                            <td>{gp.location}</td>
 
-                                {/* Colonna Gara */}
-                                <td>
-                                    {Sessioni[gp.meeting_key]?.race.length > 0 ? (
-                                        Sessioni[gp.meeting_key].race.map((session, i) => (
-                                            <div key={i} className="session-item">
-                                                <SessionCard
-                                                sessionKey={session.session_key}
-                                                label="Race"
-                                                meetingName={gp.meeting_name}
-                                                dateStart={session.date_start}
-                                                />
-                                                
-                                            </div>
-                                        ))
-                                    ) : (
-                                        "N/A"
-                                    )}
-                                </td>
-                            </tr>
-                        ))}
+                            {/* Prove Libere */}
+                            <td>
+                            {Sessioni[gp.meeting_key]?.practice.length > 0 ? (
+                                Sessioni[gp.meeting_key].practice.map((session, i) => (
+                                <div key={i} className="session-item">
+                                    <SessionCard
+                                    sessionKey={session.session_key}
+                                    label={`FP${i + 1}`}
+                                    meetingName={gp.meeting_name}
+                                    dateStart={session.date_start}
+                                    />
+                                </div>
+                                ))
+                            ) : (
+                                "N/A"
+                            )}
+                            </td>
+
+                            {/* Qualifiche */}
+                            <td>
+                            {Sessioni[gp.meeting_key]?.qualifying.length > 0 ? (
+                                Sessioni[gp.meeting_key].qualifying.map((session, i) => (
+                                <div key={i} className="session-item">
+                                    <SessionCard
+                                    sessionKey={session.session_key}
+                                    label="Qualifying"
+                                    meetingName={gp.meeting_name}
+                                    dateStart={session.date_start}
+                                    />
+                                </div>
+                                ))
+                            ) : (
+                                "N/A"
+                            )}
+                            </td>
+
+                            {/* Gara */}
+                            <td>
+                            {Sessioni[gp.meeting_key]?.race.length > 0 ? (
+                                Sessioni[gp.meeting_key].race.map((session, i) => (
+                                <div key={i} className="session-item">
+                                    <SessionCard
+                                    sessionKey={session.session_key}
+                                    label="Race"
+                                    meetingName={gp.meeting_name}
+                                    dateStart={session.date_start}
+                                    />
+                                </div>
+                                ))
+                            ) : (
+                                "N/A"
+                            )}
+                            </td>
+                        </tr>
+                        );
+                    })}
                     </tbody>
+
                 </table>
             </div>
         </>
