@@ -15,7 +15,7 @@
   background-image: url(https://img.freepik.com/vettori-gratuito/sfondo-di-velocita-bandiera-a-scacchi-da-corsa_1017-23607.jpg);
   background-size: cover;
   object-position: top;
-  padding: 10px;
+  padding: 15px;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -247,7 +247,6 @@ tbody tr:hover {
   min-height: calc(100vh - 200px);
   padding: 0;
   box-sizing: border-box;
-  gap: 20px;
 }
 
 .side-image {
@@ -255,17 +254,28 @@ tbody tr:hover {
   min-height: 100vh;
   padding: 10px;
   box-sizing: border-box;
-  flex-shrink: 0;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;}
 
+/* Miglioramenti SideImage */
 .side-image img {
   width: 100%;
   height: 100%;
   min-height: 100vh;
   object-fit: cover;
+  object-position: center; /* Cambiato da top a center */
   border: 5px solid rgb(0, 0, 0);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-  border-radius: 8px;
+}
+
+/* Per mobile - migliora la visualizzazione */
+@media (max-width: 768px) {
+  .side-image img {
+    object-position: center;
+    min-height: 150px;
+    max-height: 200px;
+  }
 }
 
 .main-content {
@@ -310,10 +320,6 @@ tbody tr:hover {
     width: 150px;
   }
 
-  .side-image img {
-    min-height: 70vh;
-  }
-
   table,
   .gp-table {
     width: 98%;
@@ -350,10 +356,7 @@ tbody tr:hover {
     padding: 5px;
   }
 
-  .side-image img {
-    min-height: 150px;
-    max-height: 200px;
-  }
+
 
   .main-content {
     padding: 15px;
@@ -441,10 +444,20 @@ tbody tr:hover {
     font-size: 0.85em;
   }
 
-  table,
-  .gp-table {
-    font-size: 0.8em;
+/* Smartphone (fino a 480px) */
+@media (max-width: 480px) {
+  .table-container {
+    margin: 8px 0;
   }
+  
+  table {
+    min-width: 850px;
+  }
+  
+  .gp-table {
+    min-width: 950px;
+  }
+}
 
   tbody tr td {
     padding: 6px;
@@ -483,10 +496,6 @@ tbody tr:hover {
     padding: 4px 8px;
   }
 
-  .side-image img {
-    min-height: 120px;
-    max-height: 150px;
-  }
 
   .Footer {
     font-size: 0.8em;

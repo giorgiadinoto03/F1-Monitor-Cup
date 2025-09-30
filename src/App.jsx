@@ -1,5 +1,5 @@
 import Header from './components/Header'
-import Theme from './components/Theme'
+import Theme from './components/Theme' // Assicurati che Theme sia un componente valido se lo mantieni
 import React from 'react'
 import './App.css'
 import HomePage from './Routes/HomePage'
@@ -14,7 +14,8 @@ function App() {
 
   return (
     <>
-    <Theme>
+    {/* Ho mantenuto il componente Theme, assicurati che sia funzionale o rimuovilo se non necessario */}
+    <Theme> 
       <BrowserRouter>
       <Header />
       <Routes>
